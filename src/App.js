@@ -1,10 +1,11 @@
 
 import './App.css';
+import WinePair from './components/WinePair';
 
 function App() {
   return (
     <div className="App">
-   <h1>Wine</h1>
+      <WinePair />
     </div>
   );
 }
