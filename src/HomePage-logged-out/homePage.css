@@ -1,0 +1,54 @@
+body{
+    background-image: url("../Images/backgroungApp.jpg");
+    background-repeat: repeat;
+    min-height: auto;
+    background-size: cover;
+
+}
+.homepage-logged-out-container{
+    padding-right: 30%;
+    margin-top: 8%;
+}
+h1,h2{
+    color:gray;
+}
+.btn-container{
+    display: inline-block;
+ margin: 1rem;
+}
+.pairing-recommendation-btn,.sign-in-btn,.sign-up-btn,.search-btn{
+  display: inline-block;
+  margin: 1.5rem;
+   color: #fff !important;
+   font-style: italic;
+   font-size: large;
+   text-decoration: none;
+   background: #4a4a4a;
+   padding: 10px;
+   border: none;
+   transition: all 0.4s ease 0s;
+   border-radius:1rem
+  
+ }
+.pairing-recommendation-btn:hover,.sign-in-btn:hover,
+.sign-up-btn:hover,.search-btn:hover,
+.pairing-recommendation-btn:hover{
+    background:gray;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+/**search*/
+.search-form-container{
+    padding-right: 30%;
+    margin-top: 8%;
+
+}
+.search-input{
+    height: 2.7rem;
+    width: 20rem;
+}
