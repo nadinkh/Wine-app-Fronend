@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+import axios from "axios";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-
+import { useHistory } from 'react-router-dom'
 
 const customStyles = {
     content: {
@@ -20,24 +20,26 @@ const customStyles = {
 const SignUp = ({ toggleModal, modalIsOpen }) => {
 
     // const [modalIsOpen, setIsOpen] = useState(false)
-    const [name, setName] = useState('')
+    const history = useHistory()
+    const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
-    const [phone, setPhone] = useState('')
+    const [bio, setBio] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [confPassword, setConfPassword] = useState('')
-    const handleName = event => {
-        setName(event.target.value)
+    const [password2, setPassword2] = useState('')
+    const handleFirstName = event => {
+        setFirstName(event.target.value)
         console.log('test');
     }
     const handleLastName = event => {
         setLastName(event.target.value)
         console.log('test');
     }
-    const handlePhone = event => {
-        setPhone(event.target.value)
-        console.log('test');
-    }
+
+    // const handleBio = event => {
+    //     setBio(event.target.value)
+    //     console.log('test');
+    // }
     const handleEmail = event => {
         setEmail(event.target.value)
         console.log('test');
@@ -46,9 +48,25 @@ const SignUp = ({ toggleModal, modalIsOpen }) => {
         setPassword(event.target.value)
         console.log('test');
     }
-    const handleConfPassword = event => {
-        setConfPassword(event.target.value)
+    const handlePassword2 = event => {
+        setPassword2(event.target.value)
         console.log('test');
+    }
+
+
+    const creatUser = async (event) => {
+        event.preventDefault()
+        const response = await axios.post('http://localhost:5000/api/users/register', {
+            firstName: firstName,
+            lastName: lastName,
+            // bio: bio,
+            email: email,
+            password: password,
+            password2: password2
+        })
+        console.log(response)
+        // history.push('/HomeLogin')
+        // const reload = window.location.reload()
     }
     return (
         <div>
@@ -66,7 +84,7 @@ const SignUp = ({ toggleModal, modalIsOpen }) => {
                         <div className="first-name-container">
                             <label for="fname">First Name:</label>
                             <input className="first-name"
-                                onChange={event => handleName(event)} type="text"
+                                onChange={event => handleFirstName(event)} type="text"
                                 placeholder="First Name" required
                             />
                         </div>
@@ -88,21 +106,22 @@ const SignUp = ({ toggleModal, modalIsOpen }) => {
                         onChange={event => handlePassword(event)} type="password"
                         placeholder="Enter your password"
                         required />
-                    <label for="password-confirm">Confirm Password:</label>
-                    <input className="sign-up-password-confirm"
-                        onChange={event => handleConfPassword(event)} type="password"
-                        placeholder="Enter your password again"
+                    <label for="password">Confirm Password:</label>
+                    <input className="sign-up-password"
+                        onChange={event => handlePassword2(event)} type="password"
+                        placeholder="Enter your password"
                         required />
-                    <label for="phone">Enter your Phone Number:</label>
-                    <input className="phone-number"
-                        onChange={event => handlePhone(event)} type="tel"
-                        placeholder="+927-XXXX-XXXXX"
-                        required />
-                    <button className="join" >Join</button>
+                    <label for="bio">Bio</label>
+                    {/* <input className="bio"
+                        onChange={event => handleBio(event)} type="text"
+
+                        required /> */}
+                    <button className="join" onClick={creatUser} >Join</button>
                 </form>
             </Modal>
         </div >
     );
 }
 
-export default SignUp
+
+export default SignUp;
