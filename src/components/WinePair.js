@@ -25,6 +25,27 @@ const useStyles = makeStyles((theme) => ({
         fontSize: theme.typography.pxToRem(15),
         color: theme.palette.text.secondary,
     },
+    accMeat: {
+        backgroundColor: "#f05d65"
+    },
+    accPrep: {
+        backgroundColor: "#8f9292"
+    },
+    accDairy: {
+        backgroundColor: "#e0aa25"
+    },
+    accVeg: {
+        backgroundColor: "#a3c239"
+    },
+    accHerb: {
+        backgroundColor: "#13a89e"
+    },
+    accStarch: {
+        backgroundColor: "#f09221"
+    },
+    accSweet: {
+        backgroundColor: "#8283b8"
+    },
 }));
 
 const WinePair = () => {
@@ -88,6 +109,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel1"}
                         onChange={handleChange("panel1")}
+                        className={`${classes.accMeat}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -145,6 +167,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel2"}
                         onChange={handleChange("panel2")}
+                        className={`${classes.accPrep}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -182,6 +205,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel3"}
                         onChange={handleChange("panel3")}
+                        className={`${classes.accDairy}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -219,6 +243,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel4"}
                         onChange={handleChange("panel4")}
+                        className={`${classes.accVeg}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -276,6 +301,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel5"}
                         onChange={handleChange("panel5")}
+                        className={`${classes.accHerb}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -326,13 +352,14 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel6"}
                         onChange={handleChange("panel6")}
+                        className={`${classes.accStarch}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel4bh-content"
                             id="panel4bh-header"
                         >
-                            <Typography className={classes.heading}>Stratch</Typography>
+                            <Typography className={classes.heading}>Starch</Typography>
                             <Typography className={classes.secondaryHeading}>
                                 {starch}
                             </Typography>
@@ -366,6 +393,7 @@ const WinePair = () => {
                     <Accordion
                         expanded={expanded === "panel7"}
                         onChange={handleChange("panel7")}
+                        className={`${classes.accSweet}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
