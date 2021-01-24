@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
@@ -30,6 +31,19 @@ const SignIn = ({ toggleModal2, modalIsOpen2 }) => {
         setPassword(event.target.value)
         console.log('test2');
     }
+    const logIn = async (event) => {
+        event.preventDefault()
+        const response = await axios.post('http://localhost:5000/api/users/login', {
+            email: email,
+            password: password
+        })
+        if (response.status === 200) {
+            localStorage.setItem('token', response.data.token);
+        }
+        console.log('logged in')
+        // history.push('/HomeLogin')
+        // const reload = window.location.reload()
+    }
 
     return (
         <div>
@@ -49,7 +63,7 @@ const SignIn = ({ toggleModal2, modalIsOpen2 }) => {
                     <label for="password-signIn">Password:</label>
                     <input className="signIn-password" onChange={event => handlePassword(event)}
                         type="password" placeholder="Enter your password" required />
-                    <button className="signIn-btn" type="submit">SignIn</button>
+                    <button className="signIn-btn" onClick={logIn} type="submit">SignIn</button>
                 </form>
             </Modal>
         </div >
