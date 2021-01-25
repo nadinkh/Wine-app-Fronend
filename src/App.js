@@ -2,6 +2,7 @@
 import './App.css';
 import HomePage from './HomePage-logged-out/HomePage.jsx'
 import Search from './HomePage-logged-out/Search.jsx'
+import UserProfile from './userProfile/UserProfile.jsx'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 function App() {
@@ -20,6 +21,9 @@ function App() {
           <Route exact path="/search">
             {/* <HomePage /> */}
             <Search />
+          </Route>
+          <Route exact path="/userprofile">
+            <UserProfile />
           </Route>
         </Switch>
       </div>
