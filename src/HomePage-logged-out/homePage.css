@@ -1,8 +1,7 @@
 body{
     background-image: url("../Images/backgroungApp.jpg");
-    background-repeat: repeat;
-    min-height: auto;
     background-size: cover;
+  height: 1000px;
 
 }
 .homepage-logged-out-container{
@@ -20,15 +19,14 @@ h1,h2{
   display: inline-block;
   margin: 1.5rem;
    color: #fff !important;
-   font-style: italic;
-   font-size: large;
+   font-weight: 400;
+   font-size: 2rem;
    text-decoration: none;
-   background: #4a4a4a;
-   padding: 10px;
-   border: none;
-   transition: all 0.4s ease 0s;
-   border-radius:1rem
-  
+   background: #722F37;
+   padding: 2rem;
+   border-radius: 1rem;
+   transition: all 0.4s ease 0s
+   
  }
 .pairing-recommendation-btn:hover,.sign-in-btn:hover,
 .sign-up-btn:hover,.search-btn:hover,
@@ -52,3 +50,85 @@ cursor: pointer;
     height: 2.7rem;
     width: 20rem;
 }
+
+/**SingUP**/
+.sign-up-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up-email,.sign-up-password,
+.sign-up-password-confirm,
+.phone-number{
+    display: flex;
+    height: 2.5rem;
+    width:20rem;
+    border-radius: 4px;
+   margin: 1rem;
+   justify-content: center;
+   text-align: center;
+
+}
+.enter-phone{
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+/* signIn */
+
+.singIn-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.signIn-email,.signIn-password{
+    display: flex;
+    height:2.5rem;
+    width:15rem;
+    border-radius: 4px;
+    margin:1rem
+}
+:placeholder-shown{
+   padding: 0 2%;
+   
+}
+input.placeholder{
+    text-align: center;
+}
+    label{
+       font-size: 15px;
+       font-weight: bold;
+       
+    }
+   .first-name,.last-name{
+    height: 2.5rem;
+    width:10rem;
+    border-radius: 4px;
+    margin :1rem;
+   }
+   .first-last-name-container{
+       display:flex;
+   }
+   .last-name-container,.first-name-container{
+       display: flex;
+       flex-flow: column;
+       justify-content: center;
+       text-align: center;
+   }
+   .join,.signIn-btn{
+    display: inline-block;
+    margin: 1.5rem;
+     color: #fff !important;
+     font-weight: 400;
+     font-size: 2rem;
+     text-decoration: none;
+     background: #722F37;
+     padding: 1rem;
+     border-radius: 1rem;
+     transition: all 0.4s ease 0s 
+   }
+   .join:hover,.signIn-btn:hover{
+    cursor: pointer;
+   }

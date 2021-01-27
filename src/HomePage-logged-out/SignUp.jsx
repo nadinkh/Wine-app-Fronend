@@ -36,10 +36,7 @@ const SignUp = ({ toggleModal, modalIsOpen }) => {
         console.log('test');
     }
 
-    // const handleBio = event => {
-    //     setBio(event.target.value)
-    //     console.log('test');
-    // }
+
     const handleEmail = event => {
         setEmail(event.target.value)
         console.log('test');
@@ -111,11 +108,7 @@ const SignUp = ({ toggleModal, modalIsOpen }) => {
                         onChange={event => handlePassword2(event)} type="password"
                         placeholder="Enter your password"
                         required />
-                    <label for="bio">Bio</label>
-                    {/* <input className="bio"
-                        onChange={event => handleBio(event)} type="text"
 
-                        required /> */}
                     <button className="join" onClick={creatUser} >Join</button>
                 </form>
             </Modal>
