@@ -1,4 +1,3 @@
-
 import './App.css';
 import HomePage from './HomePage-logged-out/HomePage.jsx'
 import Search from './HomePage-logged-out/Search.jsx'
