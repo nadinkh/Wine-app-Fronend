@@ -4,6 +4,7 @@ import Search from './HomePage-logged-out/Search.jsx'
 import UserProfile from './userProfile/UserProfile.jsx'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
+import Pairing from './components/Pairing';
 function App() {
   // const [token, setToken] = useState("")
   // useEffect(() => {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/userprofile">
             <UserProfile />
+          </Route>
+          <Route exact path="/pairing">
+            <Pairing />
           </Route>
         </Switch>
       </div>
