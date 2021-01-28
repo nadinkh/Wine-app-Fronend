@@ -680,7 +680,7 @@ const WinePair = () => {
                                             color="secondary"
                                             icon={<FaceIcon />}
                                             onClick={handleChangeSweet}
-                                            value="Fruit & Berries"
+                                            value="Fruits & Berries"
                                         >
                                             Fruit & Berries
 										</Button>

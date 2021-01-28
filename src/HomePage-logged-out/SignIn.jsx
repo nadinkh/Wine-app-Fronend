@@ -39,8 +39,11 @@ const SignIn = ({ toggleModal2, modalIsOpen2 }) => {
         })
         if (response.status === 200) {
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('firstName', response.data.firstName);
         }
         console.log('logged in')
+        localStorage.setItem('user', 'in')
+         window.location.reload();
         // history.push('/HomeLogin')
         // const reload = window.location.reload()
     }
