@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Search = () => {
 
@@ -7,6 +8,7 @@ const Search = () => {
     return (
 
         <div className="search-container" >
+            <Link to="/"><button >Go home</button></Link>
             <form className="search-form-container">
 
                 <input className="search-input" type="search" id="mySearch" />

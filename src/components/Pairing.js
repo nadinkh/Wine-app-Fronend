@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import WinePair from './WinePair';
 import PairRec from './PairRec';
+import { Link } from 'react-router-dom';
+import HomePage from '../HomePage-logged-out/HomePage';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,22 +40,30 @@ const Pairing = () => {
     }
 
     return (
-        <Container className={classes.root}>
-            <Grid container
-                direction="row"
-                justify="center"
-                alignItems="center" spacing={7}>
-                <Grid item>
-                    <Paper className={classes.paper} onClick={handleShowWine}>Wine Pairing</Paper>
-                </Grid>
-                <Grid item>
-                    <Paper className={classes.paper} onClick={handleShowFood}>Food Pairing</Paper>
-                </Grid>
-            </Grid>
-            {showWine && <WinePair />}
-            {showFood && <PairRec />}
-        </Container>
-    )
+      <Container className={classes.root}>
+        <Link to="/"><button className={classes.paper}>Go home</button></Link>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={7}
+        >
+          <Grid item>
+            <Paper className={classes.paper} onClick={handleShowWine}>
+              Wine Pairing
+            </Paper>
+          </Grid>
+          <Grid item>
+            <Paper className={classes.paper} onClick={handleShowFood}>
+              Food Pairing
+            </Paper>
+          </Grid>
+        </Grid>
+        {showWine && <WinePair />}
+        {showFood && <PairRec />}
+      </Container>
+    );
 }
 
 export default Pairing;
